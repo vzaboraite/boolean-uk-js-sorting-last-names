@@ -23,7 +23,7 @@ const sortedLastNames = lastNames.sort();
 
 console.log(`Sorted array of last names: ${sortedLastNames}`);
 
-// Find the position of input last name
+// Find the position of input last name in sorted array
 let lastNamePosition = null;
 
 for (let i = 0; i < sortedLastNames.length; i++) {
@@ -37,9 +37,24 @@ console.log(
 );
 
 // Uppercase all the names
-let uppercasedLastNames = [];
+const uppercasedLastNames = [];
 
 for (let i = 0; i < lastNames.length; i++) {
   uppercasedLastNames.push(lastNames[i].toUpperCase());
 }
 console.log(`An array with uppercased last names: ${uppercasedLastNames}`);
+
+// CHALLENGE
+// - Group each sorted name with its upper-cased one in a sub-array,
+// - Put sub-arrays inside another array to group it all together.
+// - Output the result into the console.
+const pairedLastNames = [];
+
+for (let i = 0; i < sortedLastNames.length; i++) {
+  const firstValue = sortedLastNames[i];
+  const secondValue = uppercasedLastNames[i];
+  const subArray = [firstValue, secondValue];
+  pairedLastNames.push(subArray);
+}
+
+console.log(`Arrays within array: ${pairedLastNames}`);
