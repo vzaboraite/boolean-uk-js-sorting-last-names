@@ -9,37 +9,45 @@
 // - Output uppercased names
 
 const lastNames = ["Mason", "Marcora", "Rico", "Neves", "Ivanov"];
-
+console.log(`An array at the start: ${lastNames}`);
 // User input
-const newLastName = "Zaboraite"; //prompt("What is your last name?");
-console.log(newLastName);
+const newLastName = prompt("What is your last name?");
+// console.log(newLastName);
 
 // Add new name to the end of an array
-const addLastNewName = lastNames.push(newLastName);
-console.log(lastNames);
+const lastNamesAdded = lastNames.push(newLastName);
+console.log(lastNamesAdded);
 
 // Sort names alphabetically
-const sortedLastNames = lastNames.sort();
-console.log(sortedLastNames);
+// const sortedLastNames = lastNames.sort();
+// console.log(`Sorted last names: ${sortedLastNames}`);
 
-// Find the position of my name
+let sortedLastNames = [];
+
+for (let i = 0; i < lastNames.length; i++) {
+  sortedLastNames = lastNames.sort();
+}
+console.log(`Sorted array of last names: ${sortedLastNames}`);
+
+// Find the position of input last name
 // const namePosition = names.indexOf("Zaboraite");
 // console.log(namePosition);
 
-let nameLastPosition = null;
+let lastNamePosition = null;
 
 for (let i = 0; i < lastNames.length; i++) {
-  if (lastNames[i] === "Zaboraite") {
-    nameLastPosition = i;
+  if (lastNames[i] === newLastName) {
+    lastNamePosition = i;
   }
 }
-
-console.log(nameLastPosition);
+console.log(
+  `The position of ${newLastName} in the array is at index ${lastNamePosition}`
+);
 
 // Uppercase all the names
-let uppercaseLastName = null;
+let uppercasedLastNames = [];
 
 for (let i = 0; i < lastNames.length; i++) {
-  uppercaseLastName = lastNames[i].toUpperCase();
-  console.log(uppercaseLastName);
+  uppercasedLastNames.push(lastNames[i].toUpperCase());
 }
+console.log(`An array with uppercased last names: ${uppercasedLastNames}`);
