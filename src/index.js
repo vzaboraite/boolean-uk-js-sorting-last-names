@@ -19,27 +19,19 @@ const lastNamesAdded = lastNames.push(newLastName);
 console.log(lastNamesAdded);
 
 // Sort names alphabetically
-// const sortedLastNames = lastNames.sort();
-// console.log(`Sorted last names: ${sortedLastNames}`);
+const sortedLastNames = lastNames.sort();
 
-let sortedLastNames = [];
-
-for (let i = 0; i < lastNames.length; i++) {
-  sortedLastNames = lastNames.sort();
-}
 console.log(`Sorted array of last names: ${sortedLastNames}`);
 
 // Find the position of input last name
-// const namePosition = names.indexOf("Zaboraite");
-// console.log(namePosition);
-
 let lastNamePosition = null;
 
-for (let i = 0; i < lastNames.length; i++) {
-  if (lastNames[i] === newLastName) {
+for (let i = 0; i < sortedLastNames.length; i++) {
+  if (sortedLastNames[i] === newLastName) {
     lastNamePosition = i;
   }
 }
+// Output the position of an element
 console.log(
   `The position of ${newLastName} in the array is at index ${lastNamePosition}`
 );
