@@ -27,7 +27,8 @@ console.log(`Sorted array of last names: ${sortedLastNames}`);
 let lastNamePosition = null;
 
 for (let i = 0; i < sortedLastNames.length; i++) {
-  if (sortedLastNames[i] === newLastName) {
+  const lastNameToCheck = sortedLastNames[i];
+  if (lastNameToCheck === newLastName) {
     lastNamePosition = i;
   }
 }
@@ -39,8 +40,9 @@ console.log(
 // Uppercase all the names
 const uppercasedLastNames = [];
 
-for (let i = 0; i < lastNames.length; i++) {
-  uppercasedLastNames.push(lastNames[i].toUpperCase());
+for (let i = 0; i < sortedLastNames.length; i++) {
+  const lastNameToChange = sortedLastNames[i];
+  uppercasedLastNames.push(lastNameToChange.toUpperCase());
 }
 console.log(`An array with uppercased last names: ${uppercasedLastNames}`);
 
